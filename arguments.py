@@ -1,6 +1,6 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='App scans through a directory and stores metadata of .mkv files in MySQL database')
+parser = argparse.ArgumentParser(description='App scans through a directory and stores metadata of .mkv files into a MySQL database')
 parser.add_argument('database_name', type=str, help='the name of the database')
 parser.add_argument('database_user', type=str, help='the user to connect to the database')
 parser.add_argument('database_password', type=str, help='the password to connect to the database')
