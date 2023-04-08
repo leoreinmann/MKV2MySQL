@@ -1,9 +1,10 @@
 import enzyme
 import os
+import json
+import sql_connection
+import ast
 
-
-
-if __name__ == '__main__':
+def main():
     rootdir = '/home/host/movies'
 
     for subdir, dirs, files in os.walk(rootdir):
@@ -22,4 +23,39 @@ if __name__ == '__main__':
 
                 audio = mkv.audio_tracks
                 video = mkv.video_tracks
-                print(str(video))
+
+                dict_data_audio_list = []
+
+                for a in audio:
+                    a_str =  str(a).replace("True", "true").replace("False", "false").replace("None", "null").replace("\'", "\"")
+                    print(a_str)
+                    
+                    dict_audio_data = json.loads(a_str)
+
+                    print(dict_audio_data["name"])
+
+                    dict_data_audio_list.append(dict_audio_data)
+                
+                for v in video:
+                    v_str = str(v).replace("True", "true").replace("False", "false").replace("None", "null").replace("\'", "\"")
+                    print(v_str)
+
+                    dict_video_data = json.loads(v_str)
+            
+            
+            sql_connection.insert_movie(name, dict_video_data, dict_data_audio_list) #name, video_data, audio_data_list
+
+
+
+if __name__ == '__main__':
+    main()
+    
+
+
+
+                
+
+
+                
+
+                
