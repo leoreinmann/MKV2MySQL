@@ -7,7 +7,7 @@
 
 ## General
 
-With [enzyme](https://pypi.org/project/enzyme/) the app scans through a directory and stores metadata of .mkv files into MySQL database. 
+With [enzyme](https://pypi.org/project/enzyme/) the app scans through a directory and stores metadata of .mkv files into the MySQL database. 
 The database and its user and password must be created by the user. 
 The tables are created by the program. The scheme of the table is shown at [SQL Database](#sql-database).
 <br>
