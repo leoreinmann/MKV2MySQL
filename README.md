@@ -8,6 +8,20 @@
 ## General
 
 With [enzyme](https://pypi.org/project/enzyme/) the app scans through a directory and stores metadata of .mkv files in MySQL database. 
+The database and its user and password must be created by the user. 
+The tables are created by the program. The scheme of the table is shown at [SQL Database](#sql-database).
+<br>
+Following arguments are required:
+```
+positional arguments:
+  database_name      the name of the database
+  database_user      the user to connect to the database
+  database_password  the password to connect to the database
+  folder             the folder containing the .mkv files
+
+options:
+  -h, --help         show this help message and exit
+```
 
 ## Folder structure
 
