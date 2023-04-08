@@ -2,12 +2,14 @@ import enzyme
 import os
 import json
 import sql_connection
-import ast
+import arguments
+
 
 def main():
-    rootdir = '/home/host/movies'
+    rootdir = arguments.args.folder
 
     for subdir, dirs, files in os.walk(rootdir):
+
         name = str(subdir.rsplit('/', 1)[-1]) # Title (YEAR)
         title = ''
         year = ''
@@ -31,8 +33,6 @@ def main():
                     print(a_str)
                     
                     dict_audio_data = json.loads(a_str)
-
-                    print(dict_audio_data["name"])
 
                     dict_data_audio_list.append(dict_audio_data)
                 

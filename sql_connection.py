@@ -1,12 +1,13 @@
 import mysql.connector
 import json
+import arguments
 
 def connect_to_database():
     return mysql.connector.connect(
         host="localhost",
-        user="movie",
-        password="1234",
-        database="moviedb"
+        user=arguments.args.database_user,
+        password=arguments.args.database_password,
+        database=arguments.args.database_name
     )
 
 def insert_movie(title, video_data, audio_data_list):
